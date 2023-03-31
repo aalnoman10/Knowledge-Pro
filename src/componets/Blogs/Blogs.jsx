@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react'
 import Blog from '../Header/Blog/Blog';
+import './Blogs.css'
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
@@ -10,14 +11,13 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, [])
 
-    // console.log(blogs[0].id);
-
     return (
         <div className='blog-container'>
             <div className='blogs'>
                 {
                     blogs.map(blog => <Blog
                         key={blog.id}
+                        blog={blog}
                     ></Blog>)
                 }
             </div>

@@ -1,0 +1,16 @@
+.blog-container {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 0.8rem;
+}
+
+.blog-container .blog {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1px solid lightgray;
+}
+
+.blog-container :last-child {
+    border-bottom: 0;
+}
