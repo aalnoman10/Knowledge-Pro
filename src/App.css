@@ -10,6 +10,13 @@ hr {
     background-color: lightgray;
 }
 
+.blog-container {
+    padding-top: 0.6rem;
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 10px;
+}
+
 @media screen and (max-width : 500px) {
     .App {
         padding: 0.5rem 1rem;
