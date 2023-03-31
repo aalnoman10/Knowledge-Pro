@@ -1,5 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Blog.css'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = (props) => {
     const { title, coverImg, authorName, authorImg, readTime, published } = props.blog;
@@ -19,7 +21,7 @@ const Blog = (props) => {
                     </div>
                     <div className='flex gray'>
                         <p><small>{readTime}</small> min read</p>
-                        <button>f</button>
+                        <button className='bookmark'><FontAwesomeIcon icon={faBookmark} /></button>
                     </div>
                 </div>
                 <h2>{title}</h2>

@@ -35,3 +35,7 @@
 .blog-info>p {
     padding: 0.2rem 0;
 }
+
+.bookmark{
+    border: none;
+}

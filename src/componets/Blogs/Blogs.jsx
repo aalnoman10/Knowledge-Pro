@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react'
-import Blog from '../Header/Blog/Blog';
+import Blog from '../Blog/Blog';
 import './Blogs.css'
 
 const Blogs = () => {
