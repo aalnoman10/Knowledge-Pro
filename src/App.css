@@ -1,0 +1,18 @@
+.App {
+    margin: 0 auto;
+    padding: 0.5rem 0;
+    max-width: 90%;
+}
+
+hr {
+    border: none;
+    padding: 0.5px 0;
+    background-color: lightgray;
+}
+
+@media screen and (max-width : 500px) {
+    .App {
+        padding: 0.5rem 1rem;
+        max-width: unset;
+    }
+}
