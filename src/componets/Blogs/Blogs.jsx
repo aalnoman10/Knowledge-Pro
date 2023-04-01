@@ -29,10 +29,10 @@ const Blogs = () => {
         }
     }, [markRead]);
 
-    // update bookmark incomplete  
+    // update bookmark   
     const [bookmark, setBookmark] = useState([]);
 
-    const funcBookmark = (blog) => {
+    const funcBookmark = blog => {
         setBookmark([blog, ...bookmark]);
     }
 

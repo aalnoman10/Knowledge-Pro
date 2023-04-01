@@ -1,0 +1,12 @@
+.question h2 {
+    text-align: center;
+    padding: 1rem 0 0.876rem 0;
+}
+
+.question ol li {
+    padding: 0.5rem;
+}
+
+.question ol li ul h3 {
+    padding: 0.5rem;
+}
