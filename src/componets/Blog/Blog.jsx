@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Blog.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = (props) => {
@@ -21,12 +21,12 @@ const Blog = (props) => {
                     </div>
                     <div className='flex gray'>
                         <p><small>{readTime}</small> min read</p>
-                        <button className='bookmark'><FontAwesomeIcon icon={faBookmark} /></button>
+                        <button className='bookmark'><FontAwesomeIcon className='gray' icon={faBookmark} /></button>
                     </div>
                 </div>
                 <h2>{title}</h2>
                 <p><small className='gray'>#beginners</small> <small className='gray'>#programming</small></p>
-                <p><a href='#'>Mark as read</a></p>
+                <p onClick={() => props.markAsRead(props.blog)}><a href='#'>Mark as read</a></p>
             </div>
         </div>
     );
