@@ -1,7 +1,7 @@
 .blog-container {
     padding-top: 1rem;
     display: grid;
-    grid-template-columns: 9fr 3fr;
+    grid-template-columns: 8fr 4fr;
     gap: 0.8rem;
     position: relative;
 }
@@ -23,10 +23,23 @@
 }
 
 .read-times {
-    background-color: burlywood;
+    background-color: rgba(96, 71, 236, 0.1);
     padding: 5%;
+    border: 1px solid #6047EC;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    color: #6047EC;
 }
 
-.mark-items {}
+.mark-items {
+    background-color: rgba(17, 17, 17, 0.05);
+    border-radius: 0.5rem;
+    padding: 5%;
+    color: #111111;
+}
+
+.mark-items h3 {
+    font-size: 22px;
+    font-weight: 700;
+    padding-bottom: 1rem;
+}

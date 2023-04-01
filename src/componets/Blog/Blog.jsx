@@ -21,7 +21,7 @@ const Blog = (props) => {
                     </div>
                     <div className='flex gray'>
                         <p><small>{readTime}</small> min read</p>
-                        <button className='bookmark'><FontAwesomeIcon className='gray' icon={faBookmark} /></button>
+                        <button className='bookmark' onClick={() => { props.funcBookmark(props.blog) }}><FontAwesomeIcon className='gray' icon={faBookmark} /></button>
                     </div>
                 </div>
                 <h2>{title}</h2>

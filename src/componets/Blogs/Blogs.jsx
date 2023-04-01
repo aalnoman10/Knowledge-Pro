@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from 'react'
 import Blog from '../Blog/Blog';
 import './Blogs.css'
+import Bookmark from '../Bookmark/Bookmark';
 
 // data loading
 const Blogs = () => {
@@ -12,30 +13,28 @@ const Blogs = () => {
             .then(data => setBlogs(data))
     }, []);
 
-
-    const [bookmark, setBookmark] = useState([]);
+    // update read time 
+    const [markRead, setMarkRead] = useState([]);
     const markAsRead = (blog) => {
-        const newBookmark = [...bookmark, blog];
-        setBookmark(newBookmark);
+        const newMarkRead = [...markRead, blog];
+        setMarkRead(newMarkRead);
     };
 
-    // update bookmark incomplete
-    useEffect(() => {
-        // console.log(bookmark);
-        const bookmarkArr = [];
-        bookmarkArr.push(bookmark);
-        console.log(bookmarkArr);
-    }, [bookmark]);
-
-    // update read time 
     const [mins, setMins] = useState(0);
     useEffect(() => {
-        if (bookmark.length > 0) {
-            const minsArr = bookmark.map(bookmarkItem => bookmarkItem.readTime);
+        if (markRead.length > 0) {
+            const minsArr = markRead.map(markReadItem => markReadItem.readTime);
             const minsNum = minsArr.reduce((a, b) => +a + +b);
             setMins(minsNum);
         }
-    }, [bookmark]);
+    }, [markRead]);
+
+    // update bookmark incomplete  
+    const [bookmark, setBookmark] = useState([]);
+
+    const funcBookmark = (blog) => {
+        setBookmark([blog, ...bookmark]);
+    }
 
     return (
         <div className='blog-container'>
@@ -45,6 +44,7 @@ const Blogs = () => {
                         key={blog.id}
                         blog={blog}
                         markAsRead={markAsRead}
+                        funcBookmark={funcBookmark}
                     ></Blog>)
                 }
             </div>
@@ -54,7 +54,13 @@ const Blogs = () => {
                         <h3>Spent time on read : {mins} min</h3>
                     </div>
                     <div className="mark-items">
-                        <h2>Bookmarked Blogs : {bookmark.length}</h2>
+                        <h3>Bookmarked Blogs : {bookmark.length}</h3>
+                        {
+                            bookmark.map(bookmarkItem => <Bookmark
+                                key={bookmarkItem.id}
+                                title={bookmarkItem.title}
+                            ></Bookmark>)
+                        }
                     </div>
                 </div>
             </div>
