@@ -43,3 +43,13 @@
     font-weight: 700;
     padding-bottom: 1rem;
 }
+
+@media screen and (max-width : 576px) {
+    .blog-container {
+        padding-top: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        position: relative;
+    }
+}
